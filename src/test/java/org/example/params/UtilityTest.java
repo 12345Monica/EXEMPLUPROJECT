@@ -1,8 +1,10 @@
 package org.example.params;
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
+
+import java.util.stream.Stream;
 
 //asserThat(actual).<verify>(expected
 //verify sa acepete in totdeauna
@@ -38,5 +40,31 @@ public class UtilityTest {
         assertThat(Utility.toUppercase(imput))
                 .isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("primeNumbersProvider")
+    void  test_isPrime1(int input, boolean expected) {
+        assertThat(Utility.isPrime(input))
+                .isEqualTo(expected);
+
+    }
+
+    static Stream<Arguments>primeNumbersProvider() {
+        return Stream.of(
+                Arguments.of(2,true),
+                Arguments.of(13,true),
+                Arguments.of(6,false),
+                Arguments.of(-12,false),
+                Arguments.of(-7,false)
+        );
+
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(PrimeNumberArgsProvider)
+    void testIsPrime2(int imput,boolean expected) {
+        assertThat(Utility.isPrime(imput))
+                .isEqualTo(expected)
+  }
 
 }

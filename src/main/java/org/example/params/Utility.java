@@ -1,5 +1,7 @@
 package org.example.params;
 
+import java.util.stream.IntStream;
+
 public class Utility {
 
 
@@ -43,5 +45,14 @@ public class Utility {
     public static boolean isInstance(Object obj, Class<?> cls) {
         return cls.isInstance(obj);
 
+    }
+    //6.Check if number is prime
+
+    public static boolean isPrime(int number) {
+        if(number < 2) {
+            return false;
+        }
+        return IntStream.rangeClosed(2,(int) Math.sqrt(number))
+                .allMatch( it -> number % it !=0);
     }
 }
