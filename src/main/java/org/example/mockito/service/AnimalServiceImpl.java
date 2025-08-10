@@ -7,7 +7,7 @@ import org.example.mockito.repository.AnimalRepo;
 import java.util.List;
 
 //business logic + DTO <-> DAO mapping (se face mapare de pe json de pe java pe ce am eu aici)
-@AllArgsConstructor
+
 public class AnimalServiceImpl implements AnimalService{
     private  final AnimalRepo repo;
 

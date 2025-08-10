@@ -15,13 +15,15 @@ public class AnimalRepoImpl implements AnimalRepo {
         return null;
     }
 
-    @Override
-    public List<Animal> findALL() {
-        return List.of();
-    }
+   
 
     @Override
     public void deleteById(Long id) {
 
+    }
+
+    @Override
+    public List<Animal> findAll() {
+        return List.of();
     }
 }

@@ -9,7 +9,6 @@ public interface AnimalRepo {
 
     Animal findById(Long id);
 
-    List<Animal>  findALL();
 
     void  deleteById(Long id);
 
