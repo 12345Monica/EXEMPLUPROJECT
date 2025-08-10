@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class UtilityTest {
     @ParameterizedTest   //-> needs test data surce
-    @ValueSource(ints = {1,3,5,7,9,-33,-21,6})
+    @ValueSource(ints = {1,3,5,7,9,-33,-21})
     void test_IsOdd_happy_path(int number) {
         assertThat(Utility.isOdd(number))
                 .withFailMessage("Numarul trebuie sa fie impar")
