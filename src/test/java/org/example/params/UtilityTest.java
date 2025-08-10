@@ -61,10 +61,10 @@ public class UtilityTest {
     }
 
     @ParameterizedTest
-    @ArgumentsSource(PrimeNumberArgsProvider)
+    @ArgumentsSource(PrimeNumberArgsProvider.class)
     void testIsPrime2(int imput,boolean expected) {
         assertThat(Utility.isPrime(imput))
-                .isEqualTo(expected)
+                .isEqualTo(expected);
   }
 
 }

@@ -11,6 +11,12 @@ public class PrimeNumberArgsProvider implements ArgumentsProvider {
 
     @Override
     public Stream<? extends Arguments> provideArguments(ParameterDeclarations parameters, ExtensionContext context) throws Exception {
-        return ArgumentsProvider.super.provideArguments(parameters, context);
+        return Stream.of (
+                Arguments.of(2,true),
+                Arguments.of(13,true),
+                Arguments.of(6,false),
+                Arguments.of(-12,false),
+                Arguments.of(-7,false)
+        );
     }
 }
