@@ -13,4 +13,5 @@ public interface AnimalRepo {
 
     void  deleteById(Long id);
 
+    List<Animal> findAll();
 }
