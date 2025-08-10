@@ -7,7 +7,7 @@ import java.util.List;
 public interface AnimalRepo {
     void save(Animal animal);
 
-    Animal findById(Long id);
+    Animal getById(Long id);
 
 
     void  deleteById(Long id);

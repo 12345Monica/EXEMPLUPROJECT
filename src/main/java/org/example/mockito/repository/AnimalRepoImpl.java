@@ -24,7 +24,7 @@ public class AnimalRepoImpl implements AnimalRepo{
     }
 
     @Override
-    public Animal findById(Long id) {
+    public Animal getById(Long id) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return Optional.ofNullable(session.find(Animal.class, id)).get();
         }
@@ -52,4 +52,5 @@ public class AnimalRepoImpl implements AnimalRepo{
             throw new RuntimeException("Error deleting animal", e);
         }
     }
+
 }
