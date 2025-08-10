@@ -21,6 +21,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Define the annotated classes -->
-        <mapping class="org.example.mockito_animal_db.model.Animal"/>
+        <mapping class="org.example.mockito.model.Animal"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,17 +1,13 @@
 package org.example.mockito.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 @Entity
-@Table
-  // @ data --getters, setters, equales, hascode,toasting
-@NoArgsConstructor  // constructor nerepartizat
+@Table(name = "animals") // @ data --getters, setters, equales, hascode,toasting
 public class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
     @Column(nullable = false)
@@ -20,10 +16,13 @@ public class Animal {
     @Column(nullable = false)
     private String species;
 
+    public Animal() {
 
-    public Animal(String name,String species) {
+    }
+
+    public Animal(String name, String species) {
         this.name = name;
-        this.species =species;
+        this.species = species;
     }
 
     public Long getId() {

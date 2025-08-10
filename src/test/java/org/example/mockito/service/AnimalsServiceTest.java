@@ -30,35 +30,35 @@ class AnimalsServiceTest {
     private AnimalRepo animalRepo;
 
     @InjectMocks
-    private AnimalRepoImpl animalService;
+    private AnimalServiceImpl animalService;
 
     @Test
     void test_saveAnimal() {
-        Animal animal = new Animal("Lion"," Mammal");
+        Animal animal = new Animal("Lion", " Mammal");
 
-        animalService.save(animal);
+        animalService.saveAnimal(animal);
 
         verify(animalRepo, times(1)).save(animal);
     }
 
-     @Test
+    @Test
     void test_getAnimalById() {
         Animal animal = new Animal("Elephant", "Mammal");
         when(animalRepo.getById(1L))
                 .thenReturn(animal);
-        Animal result =animalService.getById(1L);
+        Animal result = animalService.getById(1L);
 
         assertThat(result)
                 .isNotNull()
                 .isEqualTo(animal);
-        verify(animalRepo,times(1)).getById(1L);
-     }
+        verify(animalRepo, times(1)).getById(1L);
+    }
 
-     @ParameterizedTest
-    @ValueSource(longs = {1L,2L,33L})
-    void  test_deleteById(long id) {
+    @ParameterizedTest
+    @ValueSource(longs = {1L, 2L, 33L})
+    void test_deleteById(long id) {
         animalService.deleteById(id);
 
-        verify(animalRepo,times(1)).deleteById(id);
-     }
+        verify(animalRepo, times(1)).deleteById(id);
+    }
 }
